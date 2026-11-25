@@ -1,0 +1,3 @@
+tools/private/
+__pycache__/
+*.plain.html

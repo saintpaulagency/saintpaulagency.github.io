@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>SPA Dashboards · Saint Paul Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --navy:#0E1830;--royal:#233975;--sky:#5EA6F3;--bg:#EDF1F7;--card:#FFFFFF;--ink:#0E1830;--ink2:#4A5672;--line:#D7DEEA;--chip:#E4EAF5;
+  --lockT:#7A4B00;--lockB:#FFF1D6;--openT:#0B7A3B;--openB:#DFF3E7;--shadow:0 6px 24px rgba(14,24,48,.07);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1222;--card:#121B31;--ink:#F3F6FC;--ink2:#A8B3CC;--line:#26324F;--chip:#1B2643;--lockT:#FFD08A;--lockB:#3A2A0E;--openT:#7FE0A8;--openB:#123224;--shadow:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1222;--card:#121B31;--ink:#F3F6FC;--ink2:#A8B3CC;--line:#26324F;--chip:#1B2643;--lockT:#FFD08A;--lockB:#3A2A0E;--openT:#7FE0A8;--openB:#123224;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,"Segoe UI",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:30px}
+.top{display:flex;align-items:center;gap:12px;padding-block:18px;border-bottom:1px solid var(--line)}
+.top img{width:44px;height:44px;object-fit:contain}
+.top b{font-size:17px}
+header{display:grid;gap:10px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink2)}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.08;margin:0;font-weight:800}
+.lede{margin:0;color:var(--ink2);max-width:66ch;font-size:18px}
+.find{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input[type=search]{font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;min-width:min(100%,320px)}
+input[type=search]:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 3px rgba(94,166,243,.25)}
+.jump{display:flex;gap:8px;flex-wrap:wrap}
+.jump a{font-size:14.5px;font-weight:600;text-decoration:none;background:var(--chip);color:var(--ink);padding:6px 12px;border-radius:999px}
+section{display:grid;gap:14px}
+h2{font-size:26px;margin:0;font-weight:700}
+.sn{margin:-6px 0 0;color:var(--ink2);font-size:16px;max-width:80ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow);display:grid;gap:10px;align-content:start;min-width:0}
+.card h3{margin:0;font-size:20px;font-weight:700;line-height:1.25}
+.card p{margin:0;font-size:15.5px;color:var(--ink2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--chip)}
+.tag.lock{color:var(--lockT);background:var(--lockB)}
+.tag.open{color:var(--openT);background:var(--openB)}
+.addr{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:13px;color:var(--ink2);overflow-wrap:anywhere}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:15px;background:var(--royal);color:#fff;padding:8px 14px;border-radius:10px;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--navy)}
+.btn.alt{background:var(--chip);color:var(--ink)}
+.btn.alt:hover{background:var(--line)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+footer{color:var(--ink2);font-size:14.5px;display:grid;gap:8px;border-top:1px solid var(--line);padding-top:18px}
+footer p{margin:0;max-width:90ch}
+.none{color:var(--ink2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><img alt="" src="data:image/webp;base64,__LOGO__"><b>Saint Paul Agency</b></div>
+  <header>
+    <span class="eyebrow">Internal · one bookmark for everything</span>
+    <h1>SPA Dashboards</h1>
+    <p class="lede">Every dashboard, report and tool built for the agency, with what it does, who it's for and how it opens. Bookmark this page: <b>saintpaulagency.github.io</b></p>
+    <div class="find">
+      <input type="search" id="q" placeholder="Find a dashboard or client" aria-label="Find a dashboard or client">
+      <nav class="jump" id="jump" aria-label="Sections"></nav>
+    </div>
+  </header>
+  <div id="sections"></div>
+  <p class="none" id="none" hidden>Nothing matches that search.</p>
+  <footer>
+    <p><b>How the addresses work.</b> Each link reads <i>who it's for</i> / <i>what it is</i>, for example <span class="addr">saintpaulagency.github.io/leadership/borton-volvo-google-ads/</span>. They forward to where each page lives, so older links keep working too.</p>
+    <p><b>Passwords.</b> Team password: the SPA Dashboards group in the Passwords app (it also opens the Meta Ads Dashboard). Report password: the private keys file in Aidan's Drive. A device that unlocked one team page in the last 7 days opens the others straight away.</p>
+    <p>The repos are public so GitHub can host them, which means folder names can be seen. Every page with client numbers stays locked until the password is entered.</p>
+  </footer>
+</div>
+<script>
+const SITE = 'https://saintpaulagency.github.io';
+const SECTIONS = __SECTIONS__;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const LOCK = { team: ['lock','Team password'], report: ['lock','Report password'], claude: ['lock','Claude login'], monday: ['lock','monday.com login'],
+  google: ['lock','Google login'], none: ['open','No password'] };
+function cardHtml(d) {
+  const href = d.path ? d.path : d.url;
+  const full = d.path ? SITE + d.path : d.url;
+  const lk = LOCK[d.opens] || ['', d.opens];
+  const extra = (d.more || []).map(m => '<a class="btn alt" href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.label) + '</a>').join('');
+  return '<article class="card" data-s="' + esc((d.title + ' ' + d.what + ' ' + d.who + ' ' + (d.keys || '')).toLowerCase()) + '">' +
+    '<h3>' + esc(d.title) + '</h3><p>' + esc(d.what) + '</p>' +
+    '<div class="tags"><span class="tag">For: ' + esc(d.who) + '</span><span class="tag ' + lk[0] + '">' + esc(lk[1]) + '</span>' +
+    (d.fresh ? '<span class="tag">' + esc(d.fresh) + '</span>' : '') + '</div>' +
+    '<div class="addr">' + esc(full.replace(/^https:\/\//, '')) + '</div>' +
+    '<div class="acts"><a class="btn" href="' + esc(href) + '"' + (d.path ? '' : ' target="_blank" rel="noopener"') + '>Open</a>' +
+    '<button class="btn alt" type="button" data-copy="' + esc(full) + '">Copy link</button>' + extra + '</div></article>';
+}
+document.getElementById('sections').innerHTML = SECTIONS.map(s =>
+  '<section id="' + s.id + '"><h2>' + esc(s.title) + '</h2><p class="sn">' + esc(s.note) + '</p><div class="grid">' + s.items.map(cardHtml).join('') + '</div></section>').join('');
+document.getElementById('jump').innerHTML = SECTIONS.map(s => '<a href="#' + s.id + '">' + esc(s.short) + '</a>').join('');
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const url = b.getAttribute('data-copy');
+  const done = t => { b.textContent = t; setTimeout(() => { b.textContent = 'Copy link'; }, 1600); };
+  try { navigator.clipboard.writeText(url).then(() => done('Copied'), () => done(url)); } catch (err) { done(url); }
+});
+document.getElementById('q').addEventListener('input', e => {
+  const q = e.target.value.trim().toLowerCase(); let shown = 0;
+  document.querySelectorAll('section').forEach(sec => {
+    let n = 0;
+    sec.querySelectorAll('.card').forEach(c => { const ok = !q || c.dataset.s.includes(q); c.hidden = !ok; if (ok) n++; });
+    sec.hidden = n === 0; shown += n;
+  });
+  document.getElementById('none').hidden = shown > 0;
+});
+</script>
+</body>
+</html>

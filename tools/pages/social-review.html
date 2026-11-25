@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Monthly Social Review · Saint Paul Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --navy:#0E1830;--royal:#233975;--sky:#5EA6F3;--bg:#EDF1F7;--card:#FFFFFF;--ink:#0E1830;--ink2:#4A5672;--line:#D7DEEA;
+  --chip:#E4EAF5;--bar:#233975;--bar2:#5EA6F3;--good:#0B7A3B;--bad:#C42B1C;--shadow:0 6px 24px rgba(14,24,48,.07);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1222;--card:#121B31;--ink:#F3F6FC;--ink2:#A8B3CC;--line:#26324F;--chip:#1B2643;--bar:#7EA7F0;--bar2:#5EA6F3;--good:#5BD08F;--bad:#FF7A6B;--shadow:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1222;--card:#121B31;--ink:#F3F6FC;--ink2:#A8B3CC;--line:#26324F;--chip:#1B2643;--bar:#7EA7F0;--bar2:#5EA6F3;--good:#5BD08F;--bad:#FF7A6B;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,"Segoe UI",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:28px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px;border-bottom:1px solid var(--line);margin-bottom:8px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600}
+.brand img{width:40px;height:40px;object-fit:contain}
+.back{font-size:15px;font-weight:600;text-decoration:none;background:var(--chip);padding:8px 14px;border-radius:999px}
+.back:hover{text-decoration:underline}
+header.h{display:grid;gap:10px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink2)}
+h1{font-size:clamp(30px,4.6vw,44px);line-height:1.1;margin:0;font-weight:800;text-wrap:balance}
+.lede{margin:0;color:var(--ink2);max-width:68ch;font-size:18px}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+select,input[type=search]{font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:9px 12px}
+select:focus,input:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 3px rgba(94,166,243,.25)}
+.meta{font-size:14px;color:var(--ink2)}
+.answer{background:var(--royal);color:#fff;border-radius:18px;padding:22px 24px;font-size:clamp(18px,2.2vw,22px);font-weight:600;line-height:1.4;text-wrap:pretty}
+.answer b{color:#BFE0FF}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,44%),1fr));gap:14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);display:grid;gap:2px;min-width:0}
+.kpi .v{font-size:32px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15}
+.kpi .l{font-size:15px;font-weight:600}
+.kpi .s{font-size:13.5px;color:var(--ink2)}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);display:grid;gap:14px;min-width:0;align-content:start}
+h2{font-size:24px;margin:0;font-weight:700;line-height:1.2}
+.note{margin:0;color:var(--ink2);font-size:16px;max-width:80ch}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.bars{display:grid;gap:7px}
+.bar{display:grid;grid-template-columns:minmax(120px,230px) minmax(0,1fr) auto;gap:10px;align-items:center;font-size:15px}
+.bar .n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .t{height:14px;background:var(--chip);border-radius:7px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--bar);border-radius:7px}
+.bar .x{font-variant-numeric:tabular-nums;font-weight:600;min-width:72px;text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--chip);border-radius:999px;padding:5px 12px;font-size:15px;font-weight:500}
+.chip b{font-weight:700}
+.clients{display:grid;gap:12px}
+details.client{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);min-width:0}
+details.client>summary{list-style:none;cursor:pointer;padding:16px 20px;display:grid;gap:10px}
+details.client>summary::-webkit-details-marker{display:none}
+.ch{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.ch h3{margin:0;font-size:21px;font-weight:700}
+.ch .tag{font-size:14px;color:var(--ink2);font-weight:500}
+.ch .tog{font-size:14px;font-weight:600;color:var(--sky)}
+details[open] .tog .o{display:none} details:not([open]) .tog .c{display:none}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px}
+.st{background:var(--bg);border-radius:10px;padding:8px 10px;min-width:0}
+.st .v{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
+.st .l{font-size:12.5px;color:var(--ink2);line-height:1.3}
+.body{padding:0 20px 20px;display:grid;gap:16px;min-width:0}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);background:var(--bg);font-weight:600}
+td.num,th.num{text-align:right}
+td:first-child,th:first-child{position:sticky;left:0;background:var(--card);white-space:normal;min-width:220px}
+th:first-child{background:var(--bg)}
+tr:last-child td{border-bottom:0}
+.k{display:inline-block;font-size:12.5px;font-weight:600;padding:1px 8px;border-radius:999px;background:var(--chip)}
+details.how{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+details.how summary{cursor:pointer;font-weight:700;font-size:18px}
+details.how ul{margin:10px 0 0;padding-left:20px;color:var(--ink2);font-size:15.5px;display:grid;gap:6px;max-width:90ch}
+.empty{color:var(--ink2);font-size:15px}
+@media (max-width:760px){
+  .two{grid-template-columns:minmax(0,1fr)}
+  .bar{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n x" "t t"}
+  .bar .n{grid-area:n}.bar .t{grid-area:t}.bar .x{grid-area:x}
+  section.card{padding:18px 16px}
+  .kpis{gap:10px}.kpi{padding:12px 12px}.kpi .v{font-size:24px}.kpi .l{font-size:14px}.kpi .s{font-size:12.5px}
+  details.client>summary{padding:14px 14px}.body{padding:0 14px 16px}
+  td:first-child,th:first-child{min-width:160px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="/"><img alt="" src="data:image/webp;base64,__LOGO__"><span>Saint Paul Agency</span></a>
+    <a class="back" href="/">← All SPA dashboards</a>
+  </div>
+
+  <header class="h">
+    <span class="eyebrow">For the team and leadership · Meta and social</span>
+    <h1>Monthly Social Review</h1>
+    <p class="lede">What Saint Paul Agency delivered on Meta and social for each client, one month at a time: the ads that ran, the boosts and organic posts, and the Monday requests we turned around.</p>
+    <div class="controls">
+      <label for="month" class="meta">Month</label>
+      <select id="month"></select>
+      <span class="meta" id="asof"></span>
+    </div>
+  </header>
+
+  <div class="answer" id="answer"></div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section class="card">
+    <h2 id="spendTitle">Meta spend by client</h2>
+    <p class="note" id="spendNote"></p>
+    <div class="bars" id="spendBars"></div>
+  </section>
+
+  <div class="two">
+    <section class="card">
+      <h2 id="mixTitle">Campaigns by type</h2>
+      <p class="note">Every Meta campaign that spent money in the month, by what it is.</p>
+      <div class="chips" id="mix"></div>
+    </section>
+    <section class="card">
+      <h2 id="reqTitle">How fast requests were picked up</h2>
+      <p class="note">Time from an account manager's Monday request to our first reply in that thread.</p>
+      <div class="bars" id="reqBars"></div>
+    </section>
+  </div>
+
+  <section class="card" style="gap:16px">
+    <div class="ch"><h2 id="clientsTitle">By client</h2>
+      <input type="search" id="q" placeholder="Find a client" aria-label="Find a client"></div>
+    <p class="note">Tap a client for its campaigns and its Monday Meta lines. Sorted by Meta spend.</p>
+    <div class="clients" id="clients"></div>
+  </section>
+
+  <details class="how">
+    <summary>How these numbers are worked out</summary>
+    <ul id="how"></ul>
+  </details>
+</div>
+
+<script>
+const REPORTS = __REPORTS__;
+const $ = s => document.querySelector(s);
+const money = v => '$' + Math.round(v).toLocaleString('en-US');
+const num = v => Math.round(v).toLocaleString('en-US');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const md = s => { const [m,d] = s.split('-').map(Number); return MON[m-1] + ' ' + d; };
+const hrs = h => h == null ? '—' : (h < 1 ? Math.round(h*60) + ' min' : h.toFixed(1) + ' h');
+
+const keys = Object.keys(REPORTS).sort().reverse();
+const sel = $('#month');
+keys.forEach(k => { const o = document.createElement('option'); o.value = k; o.textContent = REPORTS[k].label; sel.appendChild(o); });
+let pick = keys[0];
+try { const h = (location.hash || '').slice(1); if (REPORTS[h]) pick = h; } catch (e) {}
+sel.value = pick;
+sel.addEventListener('change', () => { try { history.replaceState(null, '', '#' + sel.value); } catch (e) {} render(sel.value); });
+$('#q').addEventListener('input', () => filter());
+
+function render(k) {
+  const R = REPORTS[k], S = R.summary, M = R.label;
+  $('#asof').textContent = 'Data through ' + R.throughLabel + ' · built ' + R.builtLabel;
+  $('#answer').innerHTML = 'In ' + M + ', SPA ran Meta ads for <b>' + S.clients + ' clients</b>: <b>' + num(S.camps) + ' campaigns</b> and <b>' + num(S.ads) +
+    ' ads</b> on <b>' + money(S.spend) + '</b> of spend, plus <b>' + S.boosts + ' boosted posts</b> and <b>' + S.org +
+    ' organic video posts</b>. We answered <b>' + S.req + ' Monday requests</b>; half got a reply within <b>' + hrs(S.reqMed) + '</b>.';
+  const K = [
+    [money(S.spend), 'Meta spend', M + ', all clients'],
+    [num(S.camps), 'Campaigns that ran', M + ', ' + num(S.built) + ' built or started this month'],
+    [num(S.ads), 'Ads that ran', M + ', every ad with spend'],
+    [S.boosts, 'Boosted posts', M + ', paid boosts of Page posts'],
+    [S.org, 'Organic video posts', M + ', Facebook and Instagram'],
+    [S.gbp, 'Google Business posts', M + ', video posts on Google profiles'],
+    [num(S.notes), 'Monday updates we posted', M + ', builds, changes and answers'],
+    [S.req, 'Requests handled', M + ', median first reply ' + hrs(S.reqMed)],
+    [num(S.impr), 'Impressions', M + ', all Meta campaigns'],
+    [num(S.clicks), 'Link clicks', M + ', all Meta campaigns']
+  ];
+  $('#kpis').innerHTML = K.map(([v,l,s]) => '<div class="kpi"><div class="v">' + v + '</div><div class="l">' + l + '</div><div class="s">' + s + '</div></div>').join('');
+
+  $('#spendTitle').textContent = 'Meta spend by client, ' + M;
+  $('#spendNote').textContent = 'Amount spent on Meta in ' + M + ' for each client, ' + money(S.spend) + ' in all.';
+  const max = Math.max(...R.clients.map(c => c.spend));
+  $('#spendBars').innerHTML = R.clients.map(c => '<div class="bar"><span class="n" title="' + esc(c.name) + '">' + esc(c.name) + '</span><span class="t"><i style="width:' +
+    (100 * c.spend / max).toFixed(1) + '%"></i></span><span class="x">' + money(c.spend) + '</span></div>').join('');
+
+  $('#mixTitle').textContent = 'Campaigns by type, ' + M;
+  const order = ['Carousel','Video','Boost','Banner','Leads','Other'];
+  const NAMES = {Carousel:['carousel','carousels'],Video:['video','videos'],Boost:['boost','boosts'],Banner:['banner','banners'],Leads:['lead campaign','lead campaigns'],Other:['other','others']};
+  $('#mix').innerHTML = order.filter(t => S.kinds[t]).map(t => '<span class="chip"><b>' + S.kinds[t] + '</b> ' + NAMES[t][S.kinds[t] === 1 ? 0 : 1] + '</span>').join('');
+
+  $('#reqTitle').textContent = 'How fast requests were picked up, ' + M;
+  const lab = ['Under 1 hour','1 to 4 hours','4 to 24 hours','Over a day'];
+  const bm = Math.max(...S.reqBuckets);
+  $('#reqBars').innerHTML = S.reqBuckets.map((n,i) => '<div class="bar"><span class="n">' + lab[i] + '</span><span class="t"><i style="width:' + (100*n/bm).toFixed(1) +
+    '%;background:var(--bar2)"></i></span><span class="x">' + n + ' req.</span></div>').join('') +
+    '<p class="note" style="margin-top:6px">' + S.req + ' requests in ' + M + '. Clock hours, nights and weekends included.</p>';
+
+  $('#clientsTitle').textContent = 'By client, ' + M;
+  $('#clients').innerHTML = R.clients.map(c => card(c, M)).join('') +
+    (S.otherClients.length ? '<p class="empty">Also on the ' + M + ' Launchpad with no Meta ads that month: ' + S.otherClients.map(esc).join(', ') + '.</p>' : '');
+
+  $('#how').innerHTML = R.how.map(t => '<li>' + t + '</li>').join('');
+  filter();
+}
+
+function card(c, M) {
+  const st = [
+    [money(c.spend), 'Meta spend'],
+    [c.camps.length, 'Campaigns'],
+    [c.ads, 'Ads'],
+    [c.boosts, 'Boosts'],
+    [c.org, 'Organic videos'],
+    [c.gbp, 'Google posts'],
+    [c.notes, 'Monday updates'],
+    [c.req ? c.req + ' · ' + hrs(c.reqMed) : '0', 'Requests · median reply']
+  ];
+  const rows = c.camps.slice().sort((a,b) => a.st.localeCompare(b.st) || b.s - a.s).map(x =>
+    '<tr><td>' + esc(x.n) + '</td><td><span class="k">' + x.k + '</span></td><td>' + md(x.st) + ' – ' + md(x.en) + '</td><td class="num">' + money(x.s) +
+    '</td><td class="num">' + num(x.i) + '</td><td class="num">' + num(x.cl) + '</td></tr>').join('');
+  const lines = c.lines.length ? '<div class="tw"><table><thead><tr><th>Monday Meta line</th><th class="num">Net budget</th></tr></thead><tbody>' +
+    c.lines.map(l => '<tr><td>' + esc(l[0]) + '</td><td class="num">' + money(l[1]) + '</td></tr>').join('') +
+    '<tr><td><b>Total</b></td><td class="num"><b>' + money(c.budget) + '</b></td></tr></tbody></table></div>' +
+    '<p class="note">' + M + ' Meta budget on Monday: ' + money(c.budget) + '. Spent on Meta in ' + M + ': ' + money(c.spend) + '.</p>'
+    : '<p class="empty">No Meta lines with a budget on the ' + M + ' Monday board.</p>';
+  return '<details class="client" data-name="' + esc(c.name.toLowerCase()) + '"><summary><div class="ch"><h3>' + esc(c.name) +
+    (c.note ? ' <span class="tag">· ' + esc(c.note) + '</span>' : '') + '</h3><span class="tog"><span class="o">Show details</span><span class="c">Hide details</span></span></div>' +
+    '<div class="strip">' + st.map(([v,l]) => '<div class="st"><div class="v">' + v + '</div><div class="l">' + l + ', ' + M.slice(0,3) + ' ' + M.slice(-4) + '</div></div>').join('') + '</div></summary>' +
+    '<div class="body"><div class="tw"><table><thead><tr><th>Campaign (' + M + ')</th><th>Type</th><th>Runs</th><th class="num">Spend in ' + M.slice(0,3) +
+    '</th><th class="num">Impressions</th><th class="num">Link clicks</th></tr></thead><tbody>' + rows + '</tbody></table></div>' + lines + '</div></details>';
+}
+
+function filter() {
+  const q = ($('#q').value || '').trim().toLowerCase();
+  document.querySelectorAll('details.client').forEach(d => { d.hidden = q && !d.dataset.name.includes(q); });
+}
+
+render(pick);
+</script>
+</body>
+</html>
