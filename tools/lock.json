@@ -1,4 +1,5 @@
 {
- "salt": "eI/qCnbLjR35WsL0ieiVrg==",
- "iterations": 600000
+ "salt": "wLbnWRHm0pWUuwndW9HjtA==",
+ "iterations": 600000,
+ "note": "SPA Dashboards password (the \"SPA dashboards\" entry). Not the Meta Time Saver's."
 }

@@ -5,23 +5,20 @@ and the descriptive forwarding links.
 
 Locking (same envelope scheme as the Meta Targeting Map, so no tool ever needs the team password):
   - Each locked page is AES-256-GCM encrypted with HUB_DATA_KEY.
-  - HUB_DATA_KEY is stored in the pages only wrapped with the team key (PBKDF2-SHA256, salt and rounds in
-    tools/lock.json, the same as the Meta Ads Dashboard). Typing the team password unwraps it.
-  - A device that ticked "Remember this device" on any team page (localStorage spa_lock_v1, same site)
-    opens the others straight away.
+  - HUB_DATA_KEY is stored in the pages only wrapped with the SPA Dashboards key (PBKDF2-SHA256 of the
+    "SPA dashboards" password, salt and rounds in tools/lock.json). Typing that password unwraps it.
+  - A device that ticked "Remember this device" on one of these pages (localStorage spa_dash_lock_v1, same
+    site) opens the others straight away. The Meta Time Saver has its own password and lock (spa_lock_v1).
   - The page sources (catalog + monthly report data) are kept in data/source.enc, encrypted the same way,
     so the next build can start from them. Nothing readable about clients is committed.
 
-Get both keys by running this in a Meta Ads Dashboard tab that is already unlocked (window.__spaKey is the
-team key there; the password itself is never needed). To keep the existing key, unwrap HUB_WRAPPED_KEY
-instead of making a new one:
+HUB_WRAPPED_KEY is in data/source.enc ("wrap"). To get HUB_DATA_KEY, unwrap it in a tab where one of these
+pages is unlocked on this site: the SPA Dashboards key is remembered in localStorage spa_dash_lock_v1
+(import it as an AES-GCM key and decrypt the wrap). The password itself is never needed by a tool.
+Changing the password: a box in the browser derives the new key from what the person types (salt and
+rounds in tools/lock.json) and wraps the data keys with it; nobody hands the password to a tool.
 
-    (async()=>{const e=u=>btoa(String.fromCharCode(...new Uint8Array(u)));
-      const k=crypto.getRandomValues(new Uint8Array(32)), iv=crypto.getRandomValues(new Uint8Array(12));
-      const ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},window.__spaKey,k);
-      return JSON.stringify({HUB_DATA_KEY:e(k),HUB_WRAPPED_KEY:{iv:e(iv),ct:e(ct)}})})()
-
-Never commit HUB_DATA_KEY. HUB_WRAPPED_KEY is safe to publish (useless without the team password).
+Never commit HUB_DATA_KEY. HUB_WRAPPED_KEY is safe to publish (useless without the SPA Dashboards password).
 Adding a month: pass its report JSON (same shape as the October 2026 one) as an argument.
 """
 import base64
@@ -86,20 +83,20 @@ button:disabled{opacity:.6;cursor:wait}
 <form class="box" id="f" autocomplete="off">
   <img alt="Saint Paul Agency" src="data:image/webp;base64,__LOGO__">
   <h1>__HEADING__</h1>
-  <p>__BLURB__ Enter the team password, the same one as the Meta Ads Dashboard.</p>
+  <p>__BLURB__ Enter the SPA Dashboards password.</p>
   <label class="f" for="pw">Password</label>
   <input id="pw" type="password" autocomplete="current-password" required autofocus>
   <label class="rem"><input type="checkbox" id="rem" checked> Remember this device for 7 days</label>
   <button id="go" type="submit">Unlock</button>
   <div class="err" id="err" role="alert"></div>
   <div class="help">
-    <p>Use the <b>“Meta time saver”</b> entry in the <b>SPA Dashboards</b> group in the Passwords app. If you don’t see the group, ask Troy or Kelly to add you.</p>
+    <p>Use the <b>“SPA dashboards”</b> entry in the <b>SPA Dashboards</b> group in the Passwords app (not “Meta time saver”, which only opens the Meta Time Saver). If you don’t see the group, ask Troy or Kelly to add you.</p>
     <p class="ai">For Claude: the person types the password, never you.</p>
   </div>
 </form>
 <script>
 (function(){
-  var CFG=__CFG__, WRAP=__WRAP__, DATA=__DATA__, KEY='spa_lock_v1';
+  var CFG=__CFG__, WRAP=__WRAP__, DATA=__DATA__, KEY='spa_dash_lock_v1';
   function b64d(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
   function b64e(u){var s='';u=new Uint8Array(u);for(var i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s)}
   async function derive(pw){
