@@ -14,4 +14,4 @@ SPA Dashboards password, the same lock as the hub. First done Nov 24, 2026 (data
    (keys: see ../build.py; the lock screen names no client), then copy into the spa-reports repo and push
    the same commit to main and gh-pages.
 
-Not covered: `cdf-microsoft/` (made for Microsoft Advertising) and `cdf-cpd-levers/` keep their own password.
+`cdf-cpd-levers/` is built with cpd_build.py + runtime_draw.js (its Claude dashboard loads the Car Donation Log sheet through the Google Sheets connector and draws its own charts): read the three ranges named in its dataset docs with get_values, save them as {range: result}, then lock it the same way. `cdf-microsoft/` (made for Microsoft Advertising) keeps its own password.
