@@ -201,6 +201,9 @@ def main():
             if item.get("forward"):
                 write(item["path"].strip("/") + "/index.html", FORWARD.replace("__TO__", item["forward"]))
                 n += 1
+            for alias in item.get("aliases", []):  # older addresses for the same page keep working
+                write(alias.strip("/") + "/index.html", FORWARD.replace("__TO__", item.get("forward") or item["path"]))
+                n += 1
 
     # 4. sources, sealed for the next build
     write("data/source.enc", json.dumps({"v": 1, "wrap": wrapped, "data": seal(json.dumps(src).encode(), key)}))
