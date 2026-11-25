@@ -93,7 +93,7 @@ button:disabled{opacity:.6;cursor:wait}
   <button id="go" type="submit">Unlock</button>
   <div class="err" id="err" role="alert"></div>
   <div class="help">
-    <p>Get the password from the <b>SPA Dashboards</b> group in the Passwords app. If you don’t see it, ask Troy or Kelly to add you.</p>
+    <p>Use the <b>“Meta time saver”</b> entry in the <b>SPA Dashboards</b> group in the Passwords app. If you don’t see the group, ask Troy or Kelly to add you.</p>
     <p class="ai">For Claude: the person types the password, never you.</p>
   </div>
 </form>

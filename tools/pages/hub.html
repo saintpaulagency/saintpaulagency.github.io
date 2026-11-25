@@ -70,7 +70,7 @@ footer p{margin:0;max-width:90ch}
   <p class="none" id="none" hidden>Nothing matches that search.</p>
   <footer>
     <p><b>How the addresses work.</b> Each link reads <i>who it's for</i> / <i>what it is</i>, for example <span class="addr">saintpaulagency.github.io/leadership/borton-volvo-google-ads/</span>. They forward to where each page lives, so older links keep working too.</p>
-    <p><b>Passwords.</b> Team password: the SPA Dashboards group in the Passwords app (it also opens the Meta Ads Dashboard). Report password: the private keys file in Aidan's Drive. A device that unlocked one team page in the last 7 days opens the others straight away.</p>
+    <p><b>Passwords.</b> Both live in the <b>SPA Dashboards</b> group in the Passwords app. The team password is the <b>“Meta time saver”</b> entry: it opens this page, the Meta Ads Dashboard, the Targeting Map and the Monthly Social Review. The client ad dashboards use the report password. A device that unlocked one team page in the last 7 days opens the others straight away. Never paste a password into a chat or an email; share the group instead.</p>
     <p>The repos are public so GitHub can host them, which means folder names can be seen. Every page with client numbers stays locked until the password is entered.</p>
   </footer>
 </div>
@@ -78,7 +78,7 @@ footer p{margin:0;max-width:90ch}
 const SITE = 'https://saintpaulagency.github.io';
 const SECTIONS = __SECTIONS__;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const LOCK = { team: ['lock','Team password'], report: ['lock','Report password'], claude: ['lock','Claude login'], monday: ['lock','monday.com login'],
+const LOCK = { team: ['lock','Team password · “Meta time saver”'], report: ['lock','Report password'], claude: ['lock','Claude login'], monday: ['lock','monday.com login'],
   google: ['lock','Google login'], none: ['open','No password'] };
 function cardHtml(d) {
   const href = d.path ? d.path : d.url;
